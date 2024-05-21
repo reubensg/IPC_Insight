@@ -24,7 +24,7 @@ with open(csv_file, mode='r', newline='', encoding='utf-8') as file:
 
 sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-mpnet-base-v2")
 
-client = chromadb.PersistentClient(path="C:\\Users\\reube\\OneDrive\\Desktop\\Mini Project\\test\\db")
+client = chromadb.PersistentClient(path="YOUR-DB-PATH")
 
 collection = client.get_or_create_collection(name="ipc_database", embedding_function=sentence_transformer_ef,metadata={"hnsw:space": "cosine"})
 

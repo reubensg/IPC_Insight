@@ -77,5 +77,5 @@ def audio_to_text(file):
 if __name__ == "__main__":
 
     # audio = record()
-    result = audio_to_text("C:\\Users\\reube\\Downloads\\recording.wav")
+    result = audio_to_text("AUDIO_FILE_LOCATION")
     print(result)

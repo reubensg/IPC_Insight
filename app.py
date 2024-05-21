@@ -10,10 +10,9 @@ import os
 
 app = Flask(__name__)
 app.secret_key = 'random string'
-UPLOAD_FOLDER = 'C:\\Users\\reube\\OneDrive\\Desktop\\Mini Project\\test'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-CONNECTION_STRING = "mongodb+srv://naithanclass:mKloqAA1VAZYG9ej@cluster0.zdqh2pu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+CONNECTION_STRING = "Your-connection-string"
 client = pymongo.MongoClient(CONNECTION_STRING)
 db = client.get_database('ipc_insight')
 

@@ -1,0 +1,116 @@
+body {
+    margin: 50px;
+    padding: 0;
+     /* Add the path to your background image here */
+     /* background-image: linear-gradient(rgb(30, 28, 32), rgb(65, 64, 71)); */
+     background-image: linear-gradient(rgb(0, 0, 0),rgb(32, 30, 33));
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* Rest of your CSS styles remain unchanged */
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center; /* Align items (textarea and button) horizontally */
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    font-size:17px;
+    /* background-image: url('fantastic-background.jpg');  */
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    z-index: 1000; /* Ensure the header stays on top of other elements */
+}
+
+.header h1 {
+    margin: 0;
+    /* background-color: rgba(32, 32, 33, 0.5); Adjust the alpha value (0.5) for transparency */
+    padding: 10px;
+}
+
+/* #messageForm{
+    margin-bottom: 50px;
+} */
+
+.chat-container {
+    width: 80%;
+    /* height: 100%; */
+    max-width: 600px;
+    background-color: rgba(1, 0, 2, 0.8);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    overflow-y: auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    flex-grow: 1; /* Allow the chat container to grow and occupy remaining vertical space */
+}
+
+.response-area {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 600px;
+}
+
+textarea {
+    flex: 1;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    resize: none;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    font-family: 'Times New Roman';
+}
+textarea#messageInput {
+    width: 500px;
+    /* height: 100px; */
+    resize: none;
+    margin-bottom: 0px;
+}
+
+button {
+    padding: 30px 15px;
+    background-color: #f9532d;
+    color: rgb(13, 4, 4);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 0px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.2);
+
+}
+button#submitButton {
+    width: 70px;
+    height: 79px;
+    position: relative;
+    /* margin-bottom: 10px; */
+    text-align: center;
+    top: -35px;
+}
+
+button:hover {
+    background-color: #ff6347; /* Darker shade of orange on hover */
+    color: white;
+
+}

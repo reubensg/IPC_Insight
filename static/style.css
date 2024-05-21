@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+background-image: url(balance-scale-tilted-right.jpg);
+background-image: linear-gradient(rgb(32, 30, 33), rgb(0, 0, 0));
+height: 100%;
+/* background-color: black; */
+}
+
+.wrapper {
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Your existing CSS code */
+
+/* Header style */
+.company-header {
+    position: absolute;
+    top: 30px; /* Adjust top position as needed */
+    left: 30px; /* Adjust left position as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.company-header h1 {
+    color: #fff; /* Adjust color as needed */
+    font-size: 33px; /* Adjust font size as needed */
+}
+
+/* Your existing CSS code continues */
+.welcome-message a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+.welcome-message a:hover{
+    text-decoration: none;
+    color: orange;
+    font-size: 12px;
+}
+.welcome-message {
+    text-align: center;
+}
+.container{
+    height:400px;
+    display:flex;
+    flex-wrap: nowrap;
+    
+    justify-content: start;
+}
+.card{
+    width: 120px;
+    border-radius: .75;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 25px;
+    display:flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28, -0.03,0,.99);
+    box-shadow:0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+
+}
+.card:hover {
+    width: 600px;
+    box-shadow:0px 10px 30px -5px rgba(255, 136, 0, 0.927);
+  }
+.card > .row{
+    color:white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.card > .row > .icon{
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+.card > .row > .description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease
+
+
+}
+.description p{
+    color: #223;
+    padding-top: 5px;
+}
+
+
+.description h4{
+    text-transform: uppercase;
+}
+
+input{
+    display: none;
+}
+input:checked + label{
+    width:600px;
+}
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+
+}
+.card[for="c1"]{
+    background-image: url(test.jpg);
+}
+
+.card[for="c2"]{
+    background-image: url(test1.jpg);
+}
+
+.card[for="c3"]{
+    background-image: url(courtroom-gavel.jpg);
+}
+
+.card[for="c4"]{
+    background-image: url(courtroom-gavel.jpg);
+}
+.welcome-message {
+    /* background-color: #f0f0f0;  */
+    padding: 10px; /* Padding around the welcome message */
+    margin: 20px; /* Add margin to create some space around the welcome message */
+    border-radius: 5px; /* Rounded corners */
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Position at the top of the page */
+    right: 0; /* Position at the right of the page */
+}
+
+/* Style for the welcome message text */
+.welcome-message p {
+    color: white;
+    margin: 0; /* Remove default margin */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+}

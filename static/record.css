@@ -1,0 +1,131 @@
+a {
+    color: #337ab7;
+  }
+  
+  a:hover {
+    color:#23527c;
+  }
+  a:visited {
+    color: #8d75a3;
+  }
+  
+  /* body {
+      line-height: 1.5;
+      font-family: sans-serif;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      color:black;
+      margin:2em;
+  } */
+  
+  /* h1 {
+      text-decoration: underline red;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+      font-size: 220%;
+      font-weight: bold;
+  } */
+  
+  h2 {
+      /* font-weight: bold; */
+      color: #005A9C;
+      font-size: 140%;
+      text-transform: uppercase;
+  }
+  
+  red {
+      color: red;
+  }
+  
+  #controls {
+    display: flex;
+    left: 40px;
+    
+    max-width: 28em;
+    margin-bottom: 0px;
+    
+  } 
+  
+  .newbutton {
+    /* flex-grow: 1; */
+    height: 2rem;
+    min-width: 1rem;
+    border: none;
+    border-radius: 15px;
+    background: #f9532d;
+    margin-left: 20px;
+    box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#000000;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 90%;
+  }
+  
+  button.newbutton:hover, button:focus {
+    outline: none;
+    background: #ff6347;
+  }
+  
+  button.newbutton::-moz-focus-inner {
+    border: 0;
+  }
+  
+  button.newbutton:active {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+    line-height: 3rem;
+  }
+  
+  button.newbutton:disabled {
+    pointer-events: none;
+    background: lightgray;
+  }
+  button.newbutton:first-child {
+    margin-left: 0;
+  }
+  
+  audio {
+    /* display: block; */
+    width: 300px;
+    height:40px;
+    margin-top: 0.2rem;
+  }
+  
+  li {
+    list-style: none;
+    margin-bottom: 1rem;
+    width: 125%;
+  }
+  
+  #formats {
+    margin-top: 0.5rem;
+    font-size: 80%;
+  }
+  
+  #recordingsList{
+      max-width: 28em;
+  }
+  button#recUpload {
+    margin-left: 10px;
+    /* height: 10%; */
+    /* width: 50%; */
+    position: relative;
+    top: -15px;
+    border-radius: 50%;
+    box-shadow: inset 0 0.25rem 0 rgba(0, 0, 0, 0.2);
+
+}
+button#del{
+  position: relative;
+  top: -15px;
+  left: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+p{
+  margin-bottom: 0px;
+  color:white;
+}

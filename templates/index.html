@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>IPC Insight BOT</title>
+    <link rel="stylesheet" href="/static/chat.css">
+    <link rel="stylesheet" href="/static/record.css">
+
+    <style>
+        .user-message, .bot-message {
+            font-family: 'Times New Roman';
+            font-size: 17px;
+
+        }
+        
+        .user-message {
+            margin-bottom: 10px; 
+            margin-top: 10px; 
+        }
+        .bot-message {
+            margin-top: 10px; 
+            margin-bottom: 10px;
+        }
+        
+        .chat-message {
+            
+            white-space: pre-line;
+        }
+        .user-message {
+        position: relative;
+        background-color:#035ab6c2; /* Blue background for user input */
+        color: #fff; /* White text color */
+        border-radius: 10px; /* Rounded corners */
+        padding: 10px; /* Add padding for spacing */
+        margin-bottom: 10px; /* Adjust margin for spacing between messages */
+        text-align: justify;
+
+}
+    
+    .bot-message {
+        position: relative;
+        background-color: #088b26a3; /* Green background for bot responses */
+        color: #fff; /* White text color */
+        border-radius: 10px; /* Rounded corners */
+        padding: 10px; /* Add padding for spacing */
+        margin-bottom: 10px; /* Adjust margin for spacing between messages */
+        text-align: left;
+        text-align: justify; /* Justify text */
+
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🅹🆄🆁🅸🆂🅰🅸</h1>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <!-- Chat messages will be populated here -->
+        </div>
+        
+      
+            <form action="/get" method="post" id="messageForm">
+                <textarea id="messageInput" rows="3" placeholder="Enter your narrative" name="text"></textarea>
+                <button id="submitButton">Send&nbsp;</button>
+            </form>
+            
+  
+        <div id="controls">
+            <button id="recordButton" class="newbutton">Record</button>
+            <button id="pauseButton" class="newbutton" disabled>Pause</button>
+            <button id="stopButton" class="newbutton" disabled>&nbsp;Stop&nbsp;</button>
+         </div>
+         
+         
+         <div id="formats"></div>
+           <p><strong>Recordings:</strong></p>
+           <ol id="recordingsList"></ol>
+         <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+           <script src="/static/recorder.js" defer="defer"></script>
+           <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+           <script src="/static/app.js" defer="defer"></script>
+        
+    </div>
+    
+    
+    <script src="/static/recorder.js"></script>
+
+    <script>
+        document.getElementById("messageForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var messageInput = document.getElementById("messageInput").value;
+            if (messageInput.trim() === '') {
+                console.log("Empty");
+                event.preventDefault();
+                alert("Textarea cannot be empty!"); // Prevent form submission if textarea is empty
+                return 
+            }
+            var chatContainer = document.getElementById("chatContainer");
+            var userMessageDiv = document.createElement("div");
+            userMessageDiv.classList.add("user-message"); // Add user-message class
+            userMessageDiv.classList.add("chat-message"); // Add chat-message class
+
+            userMessageDiv.textContent = messageInput;
+            chatContainer.appendChild(userMessageDiv);
+
+            var formData = new FormData(this);
+            fetch("/get",{
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the returned message in the chat container
+                var botMessageDiv = document.createElement("div");
+                botMessageDiv.classList.add("bot-message"); // Add bot-message class
+                botMessageDiv.classList.add("chat-message"); // Add chat-message class
+
+                botMessageDiv.textContent = data.message;
+                chatContainer.appendChild(botMessageDiv);
+            })
+            .catch(error => console.error('Error:', error));
+
+            // Clear the input field after sending
+            document.getElementById("messageInput").value = "";
+        });
+    </script>
+
+    <!-- Script for Audio -->
+
+    
+
+</body>
+</html>
